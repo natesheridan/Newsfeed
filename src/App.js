@@ -8,6 +8,7 @@ import clean from './util/clean'
 
 function App() {
   const [allStories, setAllStories] = useState([])
+  const [lastUpdated, setLastUpdated] = useState("")
   const [filteredStories, setFilteredStories] = useState([])
 
   
@@ -17,7 +18,7 @@ function App() {
 
   const onAppLoad = async () => {
     let nytResponse = await getTopStories("home")
-
+    setLastUpdated(nytResponse.last_updated)
     setFilteredStories(nytResponse.results)
     setAllStories(nytResponse.results)
   }
@@ -31,11 +32,12 @@ function App() {
     setFilteredStories(shownArticles)
   }
 
-
   return (
     <>
+    <p>Last updated: {`${clean.date(lastUpdated)}`}</p>
     {allStories.length>0 && <FilterForm articles={allStories} updateShownArticles={updateShownArticles}/>}
     <Newsfeed articles={filteredStories}/>
+    <h2>NYT Top Stories</h2>
     </>
   )
 }

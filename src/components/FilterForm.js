@@ -28,10 +28,36 @@ const FilterForm = ({updateShownArticles, articles}) => {
         updateShownArticles("section", event.target.value)
     }
 
+    const style = {
+        form:{
+            marginTop: '2em',
+            textAlign: 'center',
+        },
+        select: {
+            display: 'block',
+            appearance: `none`,
+            border: `0`,
+            outline: `0`,
+            font: `inherit`,
+            textAlign: 'center',
+            width: `10em`,
+            height: `3em`,
+            padding: '0 1em 0 1em',
+            background: `linear-gradient(to left, aqua 3em, slate 3em)`,
+            color: 'black',
+            borderRadius: '0.25em',
+            boxShadow: '0 0 1em 0 rgba(0, 0, 0, 0.2)',
+            cursor: 'pointer',
+            marginTop: '10px',
+        },
+        label:{
+        },
+    }
+
     return (
-        <form action="/action_page.php">
-        <label htmlFor="section">Section </label>
-        <select onChange={(event) => onSectionChange(event)} defaultValue ="all" id="section" name="section">
+        <form style={style.form}>
+        <label style={style.label} htmlFor="section">filter by category</label>
+        <select style={style.select} onChange={(event) => onSectionChange(event)} defaultValue ="all" id="section" name="section">
             <option value="all" >all</option>
             {generateSectionOptions(availableSections)}
         </select>
