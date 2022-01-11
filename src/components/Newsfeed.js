@@ -4,7 +4,6 @@ import Article from './Article'
 const Newsfeed = ({articles}) => {
 
     const style = {
-        border: '1px solid black',
         height: '100%',
         minHeight: '20px',
         width: '100%',
@@ -14,7 +13,7 @@ const Newsfeed = ({articles}) => {
     const generateArticleElements = () => {
         return articles.map((article, i) =>{
             return (
-                <Article index={i} article={article}/>
+                <Article key={i} index={i} article={article}/>
             )
         })
     }
