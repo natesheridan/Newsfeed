@@ -2,9 +2,11 @@
 import './App.css';
 import getTopStories from './util/api'
 import React, {useEffect, useState} from 'react'
+import Newsfeed from './components/Newsfeed'
 
 function App() {
-  const [topStories, setTopStories] = useState([])
+  const [allStories, setAllStories] = useState([])
+  const [filteredStories, setFilteredStories] = useState([])
 
   
   useEffect(()=> {
@@ -13,12 +15,14 @@ function App() {
 
   const onAppLoad = async () => {
     let nytResponse = await getTopStories("home")
-    setTopStories(nytResponse.results)
+    setAllStories(nytResponse.results)
+    setFilteredStories(nytResponse.results)
   }
 
 
   return (
     <>
+    <Newsfeed articles={filteredStories}/>
     </>
   )
 }
