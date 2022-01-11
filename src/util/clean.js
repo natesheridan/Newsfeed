@@ -13,6 +13,10 @@ const clean = {
             return acc
         }, {})
         return sectionObj
+    },
+    date: (dateString) => {
+        const date = new Date(dateString)
+        return date
     }
 }
 export default clean;

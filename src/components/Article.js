@@ -17,7 +17,7 @@ const Article = ({article, index}) => {
 
     const style = {
         display:'flex',
-        width: '92%',
+        width: '88%',
         padding: '15px',
         margin: '15px',
         borderLeft: '10px solid #9ac2d6',
@@ -43,14 +43,14 @@ const Article = ({article, index}) => {
             textAlign: 'center',
         },
         text:{
-            maxWidth: '550px',
+            maxWidth: '530px',
+            padding: '0 10px',
             width: '100%',
         },
         buttons: {
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'space-around'
-
         }
     }
     return (
@@ -71,7 +71,7 @@ const Article = ({article, index}) => {
                     </section>
                 </article>
                 {detailsShown && 
-                    <DetailedView article={article} index={index}/>
+                    <DetailedView article={article} toggleDetails={toggleDetails} index={index}/>
                 }
             </>
     )
