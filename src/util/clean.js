@@ -1,7 +1,7 @@
 
 const clean = {
     sectionFilter: (articles , value) => {
-        articles.filter(story => story.section === value)
+        return articles.filter(story => story.section === value)
     },
     mapAllSections: (articles) => {
         const sectionObj = articles.reduce((acc, article) => {
@@ -11,7 +11,6 @@ const clean = {
 
             return acc
         }, {})
-        console.log(sectionObj)
         return sectionObj
     }
 }

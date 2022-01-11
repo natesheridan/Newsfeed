@@ -12,7 +12,6 @@ const FilterForm = ({updateShownArticles, articles}) => {
     useEffect(()=> {
         const availableSectionsObj = clean.mapAllSections(articles)
         const sectionAvailable = Object.keys(availableSectionsObj)
-        console.log(availableSections)
         setAvailableSections(sectionAvailable)
     }, [sectionValue])
 
@@ -29,7 +28,6 @@ const FilterForm = ({updateShownArticles, articles}) => {
         updateShownArticles("section", event.target.value)
     }
 
-    clean.filter(articles, "test")
     return (
         <form action="/action_page.php">
         <label htmlFor="section">Section </label>
