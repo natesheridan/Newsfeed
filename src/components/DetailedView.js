@@ -10,7 +10,7 @@ const DetailedView = ({article, index}) => {
     marginTop: '-10px',
     marginLeft: '30px',
     borderLeft: '10px solid #798c8c',
-    boxShadow: '0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)',
+    boxShadow: '0 1px 3px rgba(0,0,0,0.15), 0 1px 2px rgba(0,0,0,0.30)',
 }
 
     return (
