@@ -34,10 +34,10 @@ function App() {
 
   return (
     <>
-    <h2>NYT Top Stories</h2>
     <p>Last updated: {`${clean.date(lastUpdated)}`}</p>
     {allStories.length>0 && <FilterForm articles={allStories} updateShownArticles={updateShownArticles}/>}
     <Newsfeed articles={filteredStories}/>
+    <h2>NYT Top Stories</h2>
     </>
   )
 }
