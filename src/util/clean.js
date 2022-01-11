@@ -1,7 +1,7 @@
 
 const clean = {
     sectionFilter: (articles , value) => {
-        if(value="all"){return articles}
+        if(value==="all"){return articles}
         return articles.filter(story => story.section === value)
     },
     mapAllSections: (articles) => {
